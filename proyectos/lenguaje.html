@@ -19,6 +19,27 @@
   --accent2:#5de8b5;
 }
 
+  #cursor{
+  position:fixed;
+  top:0;left:0;
+  pointer-events:none;
+  z-index:9999;
+}
+#dot{
+  width:6px;height:6px;
+  background:var(--accent2);
+  border-radius:50%;
+  position:absolute;
+  transform:translate(-50%,-50%);
+}
+#ring{
+  width:30px;height:30px;
+  border:2px solid rgba(93,232,181,.6);
+  border-radius:50%;
+  position:absolute;
+  transform:translate(-50%,-50%);
+}
+
   /* SKILLS */
 .skills-grid{
   display:grid;
