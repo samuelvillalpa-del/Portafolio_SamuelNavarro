@@ -1,3 +1,3 @@
 # Portafolio_SamuelNavarro
 
-[Ver portfolio interactivo](https://samuelvillalpa-del/Porfolio_SamuelNavarro/)*
+[Ver portfolio interactivo](https://samuelvillalpa-del.github.io/Porfolio_SamuelNavarro/)*
