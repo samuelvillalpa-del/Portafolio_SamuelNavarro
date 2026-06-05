@@ -72,7 +72,7 @@ nav a{
 }
 nav a:hover{color:var(--text);}
 
-/* HERO (NUEVO LAYOUT FOTO + NOMBRE) */
+/* HERO */
 .hero{
   display:flex;
   align-items:center;
@@ -82,11 +82,11 @@ nav a:hover{color:var(--text);}
   flex-wrap:wrap;
 }
 
-/* FOTO */
+/* FOTO CIRCULAR */
 .hero-img{
   width:220px;
   height:220px;
-  border-radius:18px;
+  border-radius:50%;   /* 🔥 círculo */
   overflow:hidden;
   border:2px solid rgba(139,127,245,.5);
   box-shadow:0 0 40px rgba(139,127,245,.15);
@@ -97,6 +97,7 @@ nav a:hover{color:var(--text);}
   width:100%;
   height:100%;
   object-fit:cover;
+  border-radius:50%; /* refuerzo */
 }
 
 /* TEXTO */
@@ -120,10 +121,6 @@ nav a:hover{color:var(--text);}
 }
 
 /* ABOUT */
-.about{
-  margin-bottom:60px;
-}
-
 .about-text{
   color:var(--muted);
   line-height:1.7;
@@ -209,12 +206,12 @@ nav a:hover{color:var(--text);}
     </div>
   </nav>
 
-  <!-- HERO CON FOTO AL LADO -->
+  <!-- HERO -->
   <section class="hero">
 
     <div class="hero-img">
-      <!-- CAMBIA ESTA FOTO POR LA TUYA -->
-      <img src="https://avatars.githubusercontent.com/u/265017730?v=4" alt="Samuel Navarro">
+      <!-- 🔥 TU FOTO DE GITHUB AQUÍ -->
+      <img src="https://avatars.githubusercontent.com/samuelnavarro" alt="Samuel Navarro">
     </div>
 
     <div class="hero-text">
@@ -230,19 +227,19 @@ nav a:hover{color:var(--text);}
 
     <div class="about-text">
       Me llamo <b>Samuel Navarro</b> y soy estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM).  
-      Desde que empecé en programación he desarrollado interés por la creación de aplicaciones, páginas web y sistemas backend.
+      Me interesa el desarrollo web, Java y la creación de aplicaciones modernas.
 
       <br><br>
 
-      Me gusta especialmente trabajar con Java y desarrollo web, ya que me permite entender cómo funciona la lógica detrás de los sistemas digitales.
+      Actualmente estoy aprendiendo HTML, CSS, Java, MySQL y Git, con el objetivo de convertirme en desarrollador full-stack.
 
       <br><br>
 
-      Actualmente estoy mejorando mis habilidades en HTML, CSS, Java, MySQL y Git. Mi objetivo es convertirme en desarrollador full-stack y trabajar en proyectos reales dentro de una empresa tecnológica.
+      Me gusta crear proyectos desde cero, mejorar la lógica de programación y entender cómo funcionan los sistemas reales detrás de las aplicaciones.
 
       <br><br>
 
-      También me interesa aprender buenas prácticas de programación, arquitectura de software y diseño de interfaces modernas.
+      Mi meta es entrar en el mundo laboral como desarrollador junior y seguir creciendo dentro del sector tecnológico.
     </div>
   </section>
 
@@ -265,12 +262,12 @@ nav a:hover{color:var(--text);}
 
     <div class="card">
       <b>Proyecto Java</b><br>
-      Aplicación de consola con lógica de programación y POO.
+      Aplicación de consola con lógica y POO.
     </div>
 
     <div class="card">
       <b>Web personal</b><br>
-      Diseño de páginas web con HTML y CSS responsivo.
+      Página web creada con HTML y CSS responsivo.
     </div>
 
     <div class="card">
