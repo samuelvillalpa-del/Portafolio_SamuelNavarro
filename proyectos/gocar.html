@@ -17,6 +17,40 @@
   --accent2:#5de8b5;
 }
 
+  /* BOTONES MÁS GRANDES */
+.hero-buttons{
+  margin-top:25px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:16px 22px;
+  border-radius:14px;
+  text-decoration:none;
+  font-family:'DM Mono';
+  font-size:14px;
+  transition:.3s;
+  border:1px solid rgba(255,255,255,0.12);
+  color:var(--text);
+  background:var(--surface);
+}
+
+.btn:hover{
+  transform:translateY(-4px) scale(1.03);
+  border-color:var(--accent);
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#0a0a0f;
+  font-weight:600;
+  border:none;
+}
+
+
 *{
   margin:0;
   padding:0;
