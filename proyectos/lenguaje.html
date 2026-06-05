@@ -156,7 +156,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  cursor:none!important;
+  
 }
 
 body{
@@ -333,5 +333,13 @@ p{
 
 </div>
 
+  <script>
+    document.addEventListener("mousemove",(e)=>{
+  dot.style.left = e.clientX+"px";
+  dot.style.top = e.clientY+"px";
+  ring.style.left = e.clientX+"px";
+  ring.style.top = e.clientY+"px";
+});
+  </script>
 </body>
 </html>
