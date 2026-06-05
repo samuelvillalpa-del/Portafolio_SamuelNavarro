@@ -7,6 +7,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
 <style>
 :root{
   --bg:#0a0a0f;
@@ -55,23 +57,6 @@ body{
   padding:40px 20px;
 }
 
-/* NAV */
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:60px;
-  font-family:'DM Mono',monospace;
-  font-size:13px;
-}
-
-nav a{
-  color:var(--muted);
-  text-decoration:none;
-  margin-left:15px;
-}
-nav a:hover{color:var(--text);}
-
 /* HERO */
 .hero{
   display:flex;
@@ -82,11 +67,10 @@ nav a:hover{color:var(--text);}
   flex-wrap:wrap;
 }
 
-/* FOTO CIRCULAR */
 .hero-img{
   width:220px;
   height:220px;
-  border-radius:50%;   /* 🔥 círculo */
+  border-radius:50%;
   overflow:hidden;
   border:2px solid rgba(139,127,245,.5);
   box-shadow:0 0 40px rgba(139,127,245,.15);
@@ -97,10 +81,9 @@ nav a:hover{color:var(--text);}
   width:100%;
   height:100%;
   object-fit:cover;
-  border-radius:50%; /* refuerzo */
+  border-radius:50%;
 }
 
-/* TEXTO */
 .hero-text{
   text-align:left;
 }
@@ -110,53 +93,174 @@ nav a:hover{color:var(--text);}
   line-height:1;
 }
 
-.hero span{
-  color:var(--accent);
-}
+.hero span{color:var(--accent);}
 
 .hero p{
   margin-top:10px;
   color:var(--muted);
   font-family:'DM Mono';
+  font-size:16px;
 }
 
-/* ABOUT */
-.about-text{
-  color:var(--muted);
-  line-height:1.7;
+/* BOTONES MÁS GRANDES */
+.hero-buttons{
+  margin-top:25px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
-/* SECCIONES */
-.section-title{
-  font-size:20px;
-  margin:40px 0 20px;
-}
-
-/* CARDS */
-.card{
-  background:var(--surface);
-  border:1px solid rgba(255,255,255,0.08);
-  padding:18px;
-  border-radius:12px;
-  margin-bottom:12px;
+.btn{
+  display:inline-block;
+  padding:16px 22px;
+  border-radius:14px;
+  text-decoration:none;
+  font-family:'DM Mono';
+  font-size:14px;
   transition:.3s;
+  border:1px solid rgba(255,255,255,0.12);
+  color:var(--text);
+  background:var(--surface);
 }
 
-.card:hover{
-  transform:translateY(-4px);
+.btn:hover{
+  transform:translateY(-4px) scale(1.03);
   border-color:var(--accent);
 }
 
-/* TAGS */
-.tag{
-  display:inline-block;
-  font-size:11px;
-  padding:4px 8px;
-  margin:3px;
-  border-radius:6px;
-  background:rgba(139,127,245,.12);
-  color:var(--accent);
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#0a0a0f;
+  font-weight:600;
+  border:none;
+}
+
+/* SECCIONES MÁS GRANDES Y RESALTADAS */
+.section-title{
+  font-size:34px;
+  font-weight:800;
+  margin:60px 0 25px;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,var(--text),var(--accent));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  position:relative;
+}
+
+.section-title::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background:var(--accent2);
+  margin-top:8px;
+  border-radius:10px;
+}
+
+/* ABOUT MÁS GRANDE */
+.about-text{
+  color:var(--muted);
+  line-height:1.8;
+  font-size:24px;
+  max-width:900px;
+}
+/* PROYECTOS */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.project-card{
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:16px;
+  overflow:hidden;
+  cursor:pointer!important;
+  transition:.3s;
+  text-decoration:none;
+  color:inherit;
+}
+
+.project-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(122,120,214,0.5);
+  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+}
+
+.project-img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  background:#000;
+}
+
+.project-content{
+  padding:15px;
+}
+
+.project-title{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.project-desc{
+  font-size:13px;
+  color:#a7a7bd;
+  margin-bottom:10px;
+  line-height:1.4;
+}
+
+
+/* SKILLS */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+
+.skill{
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px;
+  padding:18px;
+  text-align:center;
+  transition:.3s;
+}
+
+.skill:hover{
+  transform:translateY(-5px);
+  border-color:var(--accent);
+}
+
+.skill i{
+  font-size:40px;
+  display:block;
+  margin-bottom:10px;
+}
+
+.skill span{
   font-family:'DM Mono';
+  font-size:12px;
+  color:var(--text);
+}
+
+/* TOOLTIP */
+#tooltip{
+  position:fixed;
+  background:rgba(0,0,0,0.85);
+  color:var(--text);
+  padding:8px 10px;
+  border-radius:8px;
+  font-size:12px;
+  pointer-events:none;
+  opacity:0;
+  transform:translate(-50%,-120%);
+  transition:.15s;
+  max-width:220px;
+  z-index:9999;
 }
 
 /* CONTACTO */
@@ -183,12 +287,40 @@ nav a:hover{color:var(--text);}
     text-align:center;
   }
 }
+
+/* TAGS (lenguajes) */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+.tag{
+  font-family:'DM Mono';
+  font-size:11px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:rgba(139,127,245,0.12);
+  border:1px solid rgba(139,127,245,0.25);
+  color:var(--text);
+  transition:.25s;
+  backdrop-filter: blur(6px);
+}
+
+.tag:hover{
+  transform:translateY(-2px);
+  background:rgba(93,232,181,0.15);
+  border-color:rgba(93,232,181,0.4);
+  color:var(--accent2);
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- CURSOR -->
 <div id="cursor">
   <div id="ring"></div>
   <div id="dot"></div>
@@ -196,35 +328,24 @@ nav a:hover{color:var(--text);}
 
 <div class="container">
 
-  <!-- NAV -->
-  <nav>
-    <div>~/samuel</div>
-    <div>
-      <a href="#about">Sobre mí</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#contact">Contacto</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
   <section class="hero">
-
     <div class="hero-img">
-      <!-- 🔥 TU FOTO DE GITHUB AQUÍ -->
-      <img src="https://avatars.githubusercontent.com/u/265017730?v=4" alt="Samuel Navarro">
+      <img src="https://avatars.githubusercontent.com/samuelnavarro" alt="Samuel Navarro">
     </div>
 
     <div class="hero-text">
       <h1>Samuel<br><span>Navarro</span></h1>
       <p>// Estudiante de 1º DAM · Futuro desarrollador full-stack</p>
-    </div>
 
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">🚀 Ver proyectos</a>
+        <a href="https://github.com/samuelnavarro" target="_blank" class="btn">💻 GitHub</a>
+      </div>
+    </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="section-title">Sobre mí</div>
-
     <div class="about-text">
       Me llamo <b>Samuel Navarro</b> y soy estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM).  
       Me interesa el desarrollo web, Java y la creación de aplicaciones modernas.
@@ -243,47 +364,98 @@ nav a:hover{color:var(--text);}
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section>
     <div class="section-title">Tecnologías</div>
-    <div class="card">
-      <span class="tag">Java</span>
-      <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
-      <span class="tag">MySQL</span>
-      <span class="tag">Git</span>
-      <span class="tag">GitHub</span>
+
+    <div class="skills-grid">
+
+      <div class="skill" data-desc="Lenguaje de programación orientado a objetos usado en backend">
+        <i class="devicon-java-plain colored"></i>
+        <span>Java</span>
+      </div>
+
+      <div class="skill" data-desc="Estructura básica de páginas web">
+        <i class="devicon-html5-plain colored"></i>
+        <span>HTML</span>
+      </div>
+
+      <div class="skill" data-desc="Diseño y estilos de páginas web">
+        <i class="devicon-css3-plain colored"></i>
+        <span>CSS</span>
+      </div>
+
+      <div class="skill" data-desc="Bases de datos relacionales">
+        <i class="devicon-mysql-plain colored"></i>
+        <span>MySQL</span>
+      </div>
+
+      <div class="skill" data-desc="Control de versiones de código">
+        <i class="devicon-git-plain colored"></i>
+        <span>Git</span>
+      </div>
+
+      <div class="skill" data-desc="Plataforma de repositorios de código">
+        <i class="devicon-github-original"></i>
+        <span>GitHub</span>
+      </div>
+
     </div>
+
+    <div id="tooltip"></div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-title">Proyectos</div>
+  <div class="section-title">Proyectos</div>
 
-    <div class="card">
-      <b>Proyecto Java</b><br>
-      Aplicación de consola con lógica y POO.
-    </div>
+  <div class="projects-grid">
 
-    <div class="card">
-      <b>Web personal</b><br>
-      Página web creada con HTML y CSS responsivo.
-    </div>
+    <a href="proyecto-java.html" class="project-card">
+      <img class="project-img" src="https://via.placeholder.com/600x300?text=Java">
+      <div class="project-content">
+        <div class="project-title">Proyecto Java</div>
+        <div class="project-desc">Aplicación de consola con POO.</div>
+        <div class="tags"><span class="tag">Java</span></div>
+        <div class="status progress">🟠 En proceso</div>
+      </div>
+    </a>
 
-    <div class="card">
-      <b>Base de datos MySQL</b><br>
-      Diseño y gestión de bases de datos relacionales.
-    </div>
-  </section>
+    <a href="web-personal.html" class="project-card">
+      <img class="project-img" src="https://via.placeholder.com/600x300?text=Web+Personal">
+      <div class="project-content">
+        <div class="project-title">Web personal</div>
+        <div class="project-desc">Portfolio hecho con HTML y CSS.</div>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+        </div>
+        <div class="status active">🟢 Activo</div>
+      </div>
+    </a>
 
-  <!-- CONTACT -->
+  </div>
+</section>
+
+
   <section id="contact">
-    <div class="section-title">Contacto</div>
-    <div class="contact">
-      Email: <a href="mailto:samuelnavarro@email.com">samuelnavarro@email.com</a><br>
-      GitHub: <a href="#">github.com/samuelnavarro</a>
-    </div>
-  </section>
+  <div class="section-title">Contacto</div>
+
+  <div class="contact">
+    <form action="https://formspree.io/f/xdavkjpg" method="POST">
+
+      <input type="email" name="email" placeholder="Tu correo" required
+        style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #333;background:#111;color:white;">
+
+      <textarea name="message" placeholder="Tu mensaje"
+        style="width:100%;padding:12px;height:120px;border-radius:8px;border:1px solid #333;background:#111;color:white;"
+        required></textarea>
+
+      <button type="submit" class="btn btn-primary" style="margin-top:10px;">
+        Enviar mensaje
+      </button>
+
+    </form>
+  </div>
+</section>
 
 </div>
 
@@ -297,6 +469,22 @@ document.addEventListener("mousemove",(e)=>{
   dot.style.top = e.clientY+"px";
   ring.style.left = e.clientX+"px";
   ring.style.top = e.clientY+"px";
+});
+
+const tooltip = document.getElementById("tooltip");
+const skills = document.querySelectorAll(".skill");
+
+skills.forEach(skill=>{
+  skill.addEventListener("mousemove",(e)=>{
+    tooltip.style.opacity = "1";
+    tooltip.style.left = e.clientX + "px";
+    tooltip.style.top = e.clientY + "px";
+    tooltip.innerText = skill.dataset.desc;
+  });
+
+  skill.addEventListener("mouseleave",()=>{
+    tooltip.style.opacity = "0";
+  });
 });
 </script>
 
