@@ -450,13 +450,25 @@ body{
 
 
   <section id="contact">
-    <div class="section-title">Contacto</div>
+  <div class="section-title">Contacto</div>
 
-    <div class="contact">
-      Email: <a href="mailto:samuelnavarro@email.com">samuelnavarro@email.com</a><br>
-      GitHub: <a href="https://github.com/samuelnavarro" target="_blank">github.com/samuelnavarro</a>
-    </div>
-  </section>
+  <div class="contact">
+    <form action="https://formspree.io/f/XXXXXXX" method="POST">
+
+      <input type="email" name="email" placeholder="Tu correo" required
+        style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #333;background:#111;color:white;">
+
+      <textarea name="message" placeholder="Tu mensaje"
+        style="width:100%;padding:12px;height:120px;border-radius:8px;border:1px solid #333;background:#111;color:white;"
+        required></textarea>
+
+      <button type="submit" class="btn btn-primary" style="margin-top:10px;">
+        Enviar mensaje
+      </button>
+
+    </form>
+  </div>
+</section>
 
 </div>
 
