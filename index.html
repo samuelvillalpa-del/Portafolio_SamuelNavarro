@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel Navarro Leal | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0f19;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#38bdf8;
+  --border:rgba(255,255,255,0.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:14px;
+  backdrop-filter:blur(10px);
+  background:rgba(11,15,25,0.7);
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+}
+
+h1{
+  font-size:clamp(36px,5vw,64px);
+  font-weight:700;
+}
+
+.highlight{
+  color:var(--accent);
+}
+
+.subtitle{
+  margin-top:12px;
+  color:var(--muted);
+}
+
+.buttons{
+  margin-top:20px;
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  margin:5px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#000;
+}
+
+.btn-secondary{
+  border:1px solid var(--border);
+  color:var(--text);
+}
+
+/* SECTIONS */
+section{
+  max-width:900px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+h2{
+  color:var(--accent);
+  margin-bottom:15px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:20px;
+  border-radius:12px;
+  margin-top:15px;
+}
+
+/* TAGS */
+.tag{
+  display:inline-block;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.05);
+  margin:4px;
+  color:var(--muted);
+}
+
+/* CONTACT FORM */
+form input,
+form textarea{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:8px;
+  border:1px solid #222;
+  background:#0f172a;
+  color:white;
+  outline:none;
+}
+
+form textarea{
+  resize:none;
+}
+
+button{
+  margin-top:12px;
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  background:var(--accent);
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#sobre">Sobre mí</a>
+  <a href="#proyecto">Proyecto</a>
+  <a href="#skills">Skills</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div>
+    <h1>Samuel <span class="highlight">Navarro Leal</span></h1>
+    <p class="subtitle">1º DAM · Desarrollador en formación</p>
+
+    <div class="buttons">
+      <a class="btn btn-primary" href="#proyecto">Ver proyecto</a>
+      <a class="btn btn-secondary" href="https://github.com/" target="_blank">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="sobre">
+  <h2>Sobre mí</h2>
+  <div class="card">
+    Soy estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM).
+    Me apasiona crear software funcional y aprender tecnologías modernas.
+  </div>
+</section>
+
+<!-- PROJECT -->
+<section id="proyecto">
+  <h2>Proyecto 🚗</h2>
+
+  <div class="card">
+    <h3>App de alquiler de vehículos entre particulares</h3>
+    <p style="color:var(--muted);margin-top:10px;">
+      Plataforma tipo marketplace donde usuarios pueden publicar y alquilar vehículos.
+    </p>
+
+    <div style="margin-top:10px;">
+      <span class="tag">Java</span>
+      <span class="tag">SQL</span>
+      <span class="tag">Android</span>
+      <span class="tag">API REST</span>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="card">
+    <span class="tag">Java</span>
+    <span class="tag">HTML</span>
+    <span class="tag">CSS</span>
+    <span class="tag">JavaScript</span>
+    <span class="tag">SQL</span>
+    <span class="tag">Git</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <h2>Contacto</h2>
+
+  <div class="card">
+    <p style="color:var(--muted);margin-bottom:10px;">
+      Envíame un mensaje directamente:
+    </p>
+
+    <form action="https://formsubmit.co/samuelvillalpa@gmail.com" method="POST">
+
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" name="name" placeholder="Tu nombre" required>
+
+      <input type="email" name="email" placeholder="Tu email" required>
+
+      <textarea name="message" rows="5" placeholder="Tu mensaje..." required></textarea>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Samuel Navarro Leal — Portfolio
+</footer>
+
+</body>
+</html>
