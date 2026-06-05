@@ -3,266 +3,305 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samuel Navarro Leal | Portfolio</title>
+<title>Samuel Navarro — Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0b0f19;
-  --card:#111827;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-  --accent:#38bdf8;
-  --border:rgba(255,255,255,0.08);
+  --bg:#0a0a0f;
+  --surface:#111118;
+  --text:#f0eff8;
+  --muted:#7a7990;
+  --accent:#8b7ff5;
+  --accent2:#5de8b5;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;cursor:none!important;}
 
 body{
   background:var(--bg);
   color:var(--text);
+  font-family:'Syne',sans-serif;
+  overflow-x:hidden;
+}
+
+/* CURSOR */
+#cursor{
+  position:fixed;
+  top:0;left:0;
+  pointer-events:none;
+  z-index:9999;
+}
+#dot{
+  width:6px;height:6px;
+  background:var(--accent2);
+  border-radius:50%;
+  position:absolute;
+  transform:translate(-50%,-50%);
+}
+#ring{
+  width:30px;height:30px;
+  border:2px solid rgba(93,232,181,.6);
+  border-radius:50%;
+  position:absolute;
+  transform:translate(-50%,-50%);
+}
+
+/* LAYOUT */
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
 }
 
 /* NAV */
 nav{
-  position:fixed;
-  top:0;
-  width:100%;
   display:flex;
-  justify-content:center;
-  gap:25px;
-  padding:14px;
-  backdrop-filter:blur(10px);
-  background:rgba(11,15,25,0.7);
-  border-bottom:1px solid var(--border);
-  z-index:1000;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:60px;
+  font-family:'DM Mono',monospace;
+  font-size:13px;
 }
 
 nav a{
   color:var(--muted);
   text-decoration:none;
-  font-size:14px;
+  margin-left:15px;
 }
+nav a:hover{color:var(--text);}
 
-nav a:hover{
-  color:var(--accent);
-}
-
-/* HERO */
+/* HERO (NUEVO LAYOUT FOTO + NOMBRE) */
 .hero{
-  height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
-  padding:20px;
+  gap:40px;
+  margin-bottom:80px;
+  flex-wrap:wrap;
 }
 
-h1{
-  font-size:clamp(36px,5vw,64px);
-  font-weight:700;
+/* FOTO */
+.hero-img{
+  width:220px;
+  height:220px;
+  border-radius:18px;
+  overflow:hidden;
+  border:2px solid rgba(139,127,245,.5);
+  box-shadow:0 0 40px rgba(139,127,245,.15);
+  flex-shrink:0;
 }
 
-.highlight{
+.hero-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* TEXTO */
+.hero-text{
+  text-align:left;
+}
+
+.hero h1{
+  font-size:clamp(45px,7vw,80px);
+  line-height:1;
+}
+
+.hero span{
   color:var(--accent);
 }
 
-.subtitle{
-  margin-top:12px;
+.hero p{
+  margin-top:10px;
   color:var(--muted);
+  font-family:'DM Mono';
 }
 
-.buttons{
-  margin-top:20px;
+/* ABOUT */
+.about{
+  margin-bottom:60px;
 }
 
-.btn{
-  display:inline-block;
-  padding:10px 16px;
-  margin:5px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:500;
+.about-text{
+  color:var(--muted);
+  line-height:1.7;
 }
 
-.btn-primary{
-  background:var(--accent);
-  color:#000;
+/* SECCIONES */
+.section-title{
+  font-size:20px;
+  margin:40px 0 20px;
 }
 
-.btn-secondary{
-  border:1px solid var(--border);
-  color:var(--text);
-}
-
-/* SECTIONS */
-section{
-  max-width:900px;
-  margin:auto;
-  padding:80px 20px;
-}
-
-h2{
-  color:var(--accent);
-  margin-bottom:15px;
-}
-
-/* CARD */
+/* CARDS */
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:20px;
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:18px;
   border-radius:12px;
-  margin-top:15px;
+  margin-bottom:12px;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent);
 }
 
 /* TAGS */
 .tag{
   display:inline-block;
-  font-size:12px;
-  padding:4px 10px;
-  border-radius:999px;
-  background:rgba(255,255,255,0.05);
-  margin:4px;
-  color:var(--muted);
+  font-size:11px;
+  padding:4px 8px;
+  margin:3px;
+  border-radius:6px;
+  background:rgba(139,127,245,.12);
+  color:var(--accent);
+  font-family:'DM Mono';
 }
 
-/* CONTACT FORM */
-form input,
-form textarea{
-  width:100%;
-  padding:10px;
-  margin-top:10px;
-  border-radius:8px;
-  border:1px solid #222;
-  background:#0f172a;
-  color:white;
-  outline:none;
+/* CONTACTO */
+.contact{
+  margin-top:60px;
+  padding:25px;
+  border-radius:14px;
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,0.08);
 }
 
-form textarea{
-  resize:none;
+.contact a{
+  color:var(--accent2);
+  text-decoration:none;
 }
 
-button{
-  margin-top:12px;
-  padding:10px 16px;
-  border:none;
-  border-radius:8px;
-  background:var(--accent);
-  color:#000;
-  font-weight:600;
-  cursor:pointer;
-}
-
-footer{
-  text-align:center;
-  padding:40px;
-  color:var(--muted);
+/* RESPONSIVE */
+@media(max-width:800px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-text{
+    text-align:center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#sobre">Sobre mí</a>
-  <a href="#proyecto">Proyecto</a>
-  <a href="#skills">Skills</a>
-  <a href="#contacto">Contacto</a>
-</nav>
+<!-- CURSOR -->
+<div id="cursor">
+  <div id="ring"></div>
+  <div id="dot"></div>
+</div>
 
-<!-- HERO -->
-<section class="hero" id="inicio">
-  <div>
-    <h1>Samuel <span class="highlight">Navarro Leal</span></h1>
-    <p class="subtitle">1º DAM · Desarrollador en formación</p>
+<div class="container">
 
-    <div class="buttons">
-      <a class="btn btn-primary" href="#proyecto">Ver proyecto</a>
-      <a class="btn btn-secondary" href="https://github.com/" target="_blank">GitHub</a>
+  <!-- NAV -->
+  <nav>
+    <div>~/samuel</div>
+    <div>
+      <a href="#about">Sobre mí</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#contact">Contacto</a>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ABOUT -->
-<section id="sobre">
-  <h2>Sobre mí</h2>
-  <div class="card">
-    Soy estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM).
-    Me apasiona crear software funcional y aprender tecnologías modernas.
-  </div>
-</section>
+  <!-- HERO CON FOTO AL LADO -->
+  <section class="hero">
 
-<!-- PROJECT -->
-<section id="proyecto">
-  <h2>Proyecto 🚗</h2>
+    <div class="hero-img">
+      <!-- CAMBIA ESTA FOTO POR LA TUYA -->
+      <img src="https://github.com/account" alt="Samuel Navarro">
+    </div>
 
-  <div class="card">
-    <h3>App de alquiler de vehículos entre particulares</h3>
-    <p style="color:var(--muted);margin-top:10px;">
-      Plataforma tipo marketplace donde usuarios pueden publicar y alquilar vehículos.
-    </p>
+    <div class="hero-text">
+      <h1>Samuel<br><span>Navarro</span></h1>
+      <p>// Estudiante de 1º DAM · Futuro desarrollador full-stack</p>
+    </div>
 
-    <div style="margin-top:10px;">
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-title">Sobre mí</div>
+
+    <div class="about-text">
+      Me llamo <b>Samuel Navarro</b> y soy estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM).  
+      Desde que empecé en programación he desarrollado interés por la creación de aplicaciones, páginas web y sistemas backend.
+
+      <br><br>
+
+      Me gusta especialmente trabajar con Java y desarrollo web, ya que me permite entender cómo funciona la lógica detrás de los sistemas digitales.
+
+      <br><br>
+
+      Actualmente estoy mejorando mis habilidades en HTML, CSS, Java, MySQL y Git. Mi objetivo es convertirme en desarrollador full-stack y trabajar en proyectos reales dentro de una empresa tecnológica.
+
+      <br><br>
+
+      También me interesa aprender buenas prácticas de programación, arquitectura de software y diseño de interfaces modernas.
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-title">Tecnologías</div>
+    <div class="card">
       <span class="tag">Java</span>
-      <span class="tag">SQL</span>
-      <span class="tag">Android</span>
-      <span class="tag">API REST</span>
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">MySQL</span>
+      <span class="tag">Git</span>
+      <span class="tag">GitHub</span>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-title">Proyectos</div>
 
-  <div class="card">
-    <span class="tag">Java</span>
-    <span class="tag">HTML</span>
-    <span class="tag">CSS</span>
-    <span class="tag">JavaScript</span>
-    <span class="tag">SQL</span>
-    <span class="tag">Git</span>
-  </div>
-</section>
+    <div class="card">
+      <b>Proyecto Java</b><br>
+      Aplicación de consola con lógica de programación y POO.
+    </div>
 
-<!-- CONTACT -->
-<section id="contacto">
-  <h2>Contacto</h2>
+    <div class="card">
+      <b>Web personal</b><br>
+      Diseño de páginas web con HTML y CSS responsivo.
+    </div>
 
-  <div class="card">
-    <p style="color:var(--muted);margin-bottom:10px;">
-      Envíame un mensaje directamente:
-    </p>
+    <div class="card">
+      <b>Base de datos MySQL</b><br>
+      Diseño y gestión de bases de datos relacionales.
+    </div>
+  </section>
 
-    <form action="https://formsubmit.co/samuelvillalpa@gmail.com" method="POST">
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-title">Contacto</div>
+    <div class="contact">
+      Email: <a href="mailto:samuelnavarro@email.com">samuelnavarro@email.com</a><br>
+      GitHub: <a href="#">github.com/samuelnavarro</a>
+    </div>
+  </section>
 
-      <input type="hidden" name="_captcha" value="false">
+</div>
 
-      <input type="text" name="name" placeholder="Tu nombre" required>
+<script>
+const cursor = document.getElementById("cursor");
+const dot = document.getElementById("dot");
+const ring = document.getElementById("ring");
 
-      <input type="email" name="email" placeholder="Tu email" required>
-
-      <textarea name="message" rows="5" placeholder="Tu mensaje..." required></textarea>
-
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 Samuel Navarro Leal — Portfolio
-</footer>
+document.addEventListener("mousemove",(e)=>{
+  dot.style.left = e.clientX+"px";
+  dot.style.top = e.clientY+"px";
+  ring.style.left = e.clientX+"px";
+  ring.style.top = e.clientY+"px";
+});
+</script>
 
 </body>
 </html>
